@@ -41,6 +41,10 @@ export class App extends Component {
         );
       }
 
+      if (page === 1) {
+        Notify.success(`Hooray! We found: ${totalHits} images.`);
+      }
+
       this.setState(prev => ({
         images: [...prev.images, ...hits],
         totalPages: Math.ceil(totalHits / 12),
